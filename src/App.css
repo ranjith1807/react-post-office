@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f6f8; /* Softer background color */
+  display: flex;
+  justify-content: center;
+}
+
+.app-container {
+  background-color: #ffffff;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px; /* Slightly wider to give 2 columns room to breathe */
+  min-height: 100vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+/* --- Search Section (Before Click) --- */
+.search-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+  width:900px;
+}
+
+/* Taller Input Field */
+.pincode-input {
+  width: 100%;
+  padding: 16px 20px; /* Increased padding for height */
+  margin-bottom: 20px;
+  border: 2px solid #e0e4e8;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: border-color 0.2s ease;
+}
+
+.pincode-input:focus {
+  outline: none;
+  border-color: #000; /* Black border on focus */
+}
+
+/* Taller Button */
+.lookup-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 16px 40px; /* Increased padding for height */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.lookup-btn:hover {
+  background-color: #333;
+}
+
+.lookup-btn:active {
+  transform: scale(0.98); /* Slight click animation */
+}
+
+/* --- Results Section (After Click) --- */
+.results-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.message-text {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #4a4a4a;
+}
+
+/* Taller Filter Field */
+.filter-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 10px 15px; /* Increased padding */
+  margin-bottom: 35px;
+}
+
+.search-icon {
+  margin-right: 12px;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.filter-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 8px 0; /* Extra height inside */
+}
+
+/* --- Grid Layout (Exactly 2 Columns) --- */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Forces exactly 2 equal columns */
+  gap: 25px; 
+}
+
+.card {
+  border: 2px solid #eaeaea; 
+  border-radius: 8px;
+  padding: 24px;
+  background-color: #fff;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* Soft lift on hover */
+  border-color: #d1d1d1;
+}
+
+.card p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* --- Error and Loader --- */
+.error-text {
+  color: #d9534f;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #000;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  animation: spin 1s linear infinite;
+  margin-top: 25px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 650px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Drops to 1 column on small phone screens so it doesn't get squished */
+  }
+}
