@@ -1,16 +1,59 @@
-# React + Vite
+# React Post Office
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React web app for looking up Indian post offices by PIN code. Enter a six-digit PIN code to retrieve matching post office details, then filter the results by office name.
 
-Currently, two official plugins are available:
+**Live demo:** [react-post-office-r67y.vercel.app](https://react-post-office-r67y.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Look up post offices by a six-digit PIN code.
+- View each result's name, branch type, delivery status, district, and division.
+- Filter returned post offices by name as you type.
+- Show loading and error states for lookups.
+- Responsive results layout for desktop and mobile.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
 
-## Expanding the ESLint configuration
+- [React](https://react.dev/) 19
+- [Vite](https://vite.dev/)
+- CSS
+- [India Post PIN Code API](https://api.postalpincode.in/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (which includes npm)
+
+### Install and run
+
+```bash
+git clone https://github.com/ranjith1807/react-post-office.git
+cd react-post-office
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite in your terminal (usually `http://localhost:5173`). Enter a six-digit PIN code and select **Lookup**. When results appear, use the filter field to narrow the list by post office name.
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server. |
+| `npm run build` | Create a production build in `dist/`. |
+| `npm run preview` | Preview the production build locally. |
+| `npm run lint` | Run ESLint. |
+
+## API and availability
+
+The app requests PIN code data from `https://api.postalpincode.in/pincode/<PINCODE>`. Lookups require an internet connection and depend on the availability of this public API. The service may return an error or no post offices for a PIN code.
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+The generated static site is in `dist/` and can be deployed to a static hosting provider such as Vercel.
